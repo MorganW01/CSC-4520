@@ -1,9 +1,11 @@
+import java.lang.reflect.Array;
 import java.util.*;
+import java.util.List;
 
 public class HW0 {
 
     public static void main(String[] args) {
-        // Q1
+        // Q1 WORKS
         int testResult1 = maxOfArray(new int[] {1, 3, 4, 5, 2});
         int testResult2 = maxOfArray(new int[] {-1, -3, -4, -5, -2});
 
@@ -12,7 +14,6 @@ public class HW0 {
         boolean emptyCaseCorrect = false;
 
         try {
-
             maxOfArray(new int[] {});
 
 
@@ -50,22 +51,22 @@ public class HW0 {
     /**
      * Add your key ideas to this comment.
      * How did you approach the problem?
+     * I approached the problem by first setting up the method to check for an empty array then throwing an exception. If the array wasn't empty then
+     * I did a simple for loop to check for the max value
      * Why does your code work?
+     * My code works because it not only applies to the test cases but to other cases and empty arrays as well
      */
+
     public static int maxOfArray(int[] arr) {
 
-        // Initialize maximum element
-
+        // if statement to check if array is empty
         if (arr == null || arr.length ==0)
-
         {
             throw new IllegalArgumentException("array is empty");
-
         }
-
+        //Initialize max value
         int maxValue = arr[0];
-
-
+        //for loop that checks for max value
         for (int i = 1; i < arr.length; i++) {
 
             if (arr[i] > maxValue) {
@@ -73,14 +74,15 @@ public class HW0 {
             }
         }
 
-
         return maxValue;
     }
 
     /**
      * Add your key ideas to this comment.
      * How did you approach the problem?
+     * Using double for loops to check for values in the array that will add up to the target value.
      * Why does your code work?
+     * My code works because the test cases work and there are no syntax errors.
      */
     public static int[] twoSum(int[] arr, int targetSum) {
         for (int i = 0; i < arr.length; i++) {
@@ -99,13 +101,11 @@ public class HW0 {
      * Add your key ideas to this comment.
      * How did you approach the problem?
      * Why does your code work?
+     * @return
      */
-    public static List<Integer> add(List<Integer> lst1, List<Integer> lst2) {
+    public static ArrayList add(List<Integer> lst1, List<Integer> lst2) {
 
-
-
-
-        throw new UnsupportedOperationException("add not yet written");
+       throw new UnsupportedOperationException("add not yet written");
     }
 }
 
