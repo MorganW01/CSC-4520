@@ -99,9 +99,8 @@ public class HW0 {
 
     /**
      * Add your key ideas to this comment.
-     * App        int lastIndex1;roached the problem by first checking if the arrays are the
-     * My code works because the test cases work and there are no syntax errors.
-     * @return
+     * Approached the problem by adding the contents of the list from right to left, and leaving parts of the problem = 0 in case the lists are not the same length.
+     * My code works because the test cases work and there are no syntax or other errors.
      */
     public static ArrayList add(List<Integer> lst1, List<Integer> lst2) {
 
@@ -113,40 +112,28 @@ public class HW0 {
 
         while (lastIndexList1 >=0|| lastIndexList2 >=0){
 
-            int first = (lastIndexList1 >=0) ? lst1.get(lastIndexList1) : 0;
-            int second = (lastIndexList2 >=0) ? lst2.get(lastIndexList2) : 0;
+            int firstDigit = (lastIndexList1 >=0) ? lst1.get(lastIndexList1) : 0;
+            int secondDigit = (lastIndexList2 >=0) ? lst2.get(lastIndexList2) : 0;
 
-            int sum = first + second + carry;
+            int sumOfLists = firstDigit + secondDigit + carry;
 
-            if (sum >=10){
+            if (sumOfLists >=10){
                 carry = 1;
             }
-
             else {
                 carry =0;
             }
 
-            result.add(0, sum %10);
+            result.add(0, sumOfLists %10);
 
             lastIndexList1--;
             lastIndexList2--;
-
         }
 
         if (carry ==1) ;
         result.add(0,1);
 
         return (ArrayList) result;
-
-
-
-
-
-
-
-
-
-
 
     }
 }
