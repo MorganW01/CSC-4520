@@ -99,24 +99,47 @@ public class HW0 {
 
     /**
      * Add your key ideas to this comment.
-     * How did you approach the problem?
-     * Why does your code work?
+     * App        int lastIndex1;roached the problem by first checking if the arrays are the
+     * My code works because the test cases work and there are no syntax errors.
      * @return
      */
     public static ArrayList add(List<Integer> lst1, List<Integer> lst2) {
-        int lastIndex1 = lst1.size()-1;
-        int lastIndex2 = lst2.size()-1;
-        ArrayList result = new ArrayList();
 
-        
-        while (lastIndex1 >=0 || lastIndex2 >=0){
+        int carry =0;
+        int lastIndexList1 = lst1.size()-1;
+        int lastIndexList2 = lst2.size()-1;
+        List<Integer> result = new ArrayList<>();
 
-            result.add(lastIndex1+lastIndex2);
+
+        while (lastIndexList1 >=0|| lastIndexList2 >=0){
+
+            int first = (lastIndexList1 >=0) ? lst1.get(lastIndexList1) : 0;
+            int second = (lastIndexList2 >=0) ? lst2.get(lastIndexList2) : 0;
+
+            int sum = first + second + carry;
+
+            if (sum >=10){
+                carry = 1;
+            }
+
+            else {
+                carry =0;
+            }
+
+            result.add(0, sum %10);
+
+            lastIndexList1--;
+            lastIndexList2--;
 
         }
 
-        return result;
-    }
+        if (carry ==1) ;
+        result.add(0,1);
+
+        return (ArrayList) result;
+
+
+
 
 
 
