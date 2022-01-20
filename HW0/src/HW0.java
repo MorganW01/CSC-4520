@@ -104,8 +104,27 @@ public class HW0 {
      * @return
      */
     public static ArrayList add(List<Integer> lst1, List<Integer> lst2) {
+        int lastIndex1 = lst1.size()-1;
+        int lastIndex2 = lst2.size()-1;
+        ArrayList result = new ArrayList();
 
-       throw new UnsupportedOperationException("add not yet written");
+        
+        while (lastIndex1 >=0 || lastIndex2 >=0){
+
+            result.add(lastIndex1+lastIndex2);
+
+        }
+
+        return result;
+    }
+
+
+
+
+
+
+
+
     }
 }
 
