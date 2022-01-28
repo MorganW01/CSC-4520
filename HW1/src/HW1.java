@@ -38,7 +38,24 @@ public class HW1 {
      * Why does your code work?
      */
     public static int findMissing(int[] arr) {
-        throw new UnsupportedOperationException("findMissing not yet written");
+
+        int N = 0;
+        int s =0;
+
+        for (int i =0; i <arr.length; i++){
+            N++;
+            s +=i;
+        }
+
+        return (N *(N+1))/2 - s;
+
+        //store length of the array in the integer variable N
+
+        // calculate the sum of all of the elements in the array and store it in the variable s (sum)
+
+        // return an integer that is the missing value in the array (N(N+1))/2 - s
+
+        //throw new UnsupportedOperationException("findMissing not yet written");
     }
 
     /**
