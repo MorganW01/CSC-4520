@@ -87,12 +87,23 @@ public class HW1 {
      * Why does your code work?
      */
     public static int pickTrees(int[] arr) {
-        //base case
-        if () {
+        return treeHelper(arr,);
+    }
+
+    public static int treeHelper(int[] arr, int tree){
+        if (arr.length < tree){
             return 0;
         }
-        //DON'T FORGET THE PSEUDO CODE!!!!!
+        if ((arr.length)-1 == tree){
+            return 1;
+        }
+        int sum = arr[tree]+treeHelper(arr, tree+2);
+
+        int otherSum = arr[tree+1]+treeHelper(arr, tree+3);
+
+        return Math.max(sum, otherSum);
 
     }
+
 }
 
