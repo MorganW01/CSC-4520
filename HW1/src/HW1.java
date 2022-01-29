@@ -1,3 +1,5 @@
+import javax.print.attribute.SetOfIntegerSyntax;
+
 public class HW1 {
 
     public static void main(String[] args) {
@@ -87,19 +89,21 @@ public class HW1 {
      * Why does your code work?
      */
     public static int pickTrees(int[] arr) {
-        return treeHelper(arr,);
+        return treeHelper(arr, 0);
     }
 
     public static int treeHelper(int[] arr, int tree){
-        if (arr.length < tree){
+        if (arr.length <= tree){
             return 0;
         }
-        if ((arr.length)-1 == tree){
-            return 1;
+
+        if (arr.length-1 == tree){
+            return arr[tree];
         }
+
         int sum = arr[tree]+treeHelper(arr, tree+2);
 
-        int otherSum = arr[tree+1]+treeHelper(arr, tree+3);
+        int otherSum = arr[tree+1] + treeHelper(arr, tree+3);
 
         return Math.max(sum, otherSum);
 
