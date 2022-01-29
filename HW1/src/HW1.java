@@ -1,5 +1,3 @@
-import javax.print.attribute.SetOfIntegerSyntax;
-
 public class HW1 {
 
     public static void main(String[] args) {
@@ -23,7 +21,7 @@ public class HW1 {
         System.out.println(countFives(123467890)); // should output 0
         System.out.println(countFives(555555));    // should output 6
         System.out.println(countFives(15354));     // should output 2
-        
+
         // Q4
         System.out.println("Question 4 test cases:");
         // 1,3,5
