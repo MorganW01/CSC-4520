@@ -48,7 +48,7 @@ class HW3 {
 
         ArrayList<Integer> result = new ArrayList<>(n);
         for (int i=0; i< n-1; i++){ // n-1
-            heapAdd(heap, (Integer)array.get(i));
+            heapAdd(heap, array.get(i));
 
         }
 
@@ -63,7 +63,7 @@ class HW3 {
 
     public static void main(String[] args) {
 
-        ArrayList<Integer> array = new ArrayList<Integer>();
+        ArrayList<Integer> array = new ArrayList<>();
         array.add(1);
         array.add(4);
         array.add(5);
