@@ -28,25 +28,21 @@ class HW3 {
     public static void heapAdd(ArrayList<Integer> heap, int value) {
         int size = heap.size();
         //checks size of the array and adds values
-        if (size == 0) {
-            heap.add(value);
-        } else {
             heap.add(value);
             for (int i = size / 2 - 1; i >= 0; i--) {
                 heapify(heap, i);
             }
         }
-    }
+
 
     //where the problem is
     public static int extractMax(ArrayList<Integer> heap) {
-        //declares max of the heap
-        int max = (heap.get(1));
-        //decreases size of heap
-        heap.set(1, heap.size() - 1);
-        //calls heapify method
-        heapify(heap, 1);
+        int max = heap.get(0);
+        heap.remove(0);
+        heap.trimToSize();
+        heapify(heap, 0);
         return max;
+
     }
 
 
@@ -63,14 +59,18 @@ class HW3 {
 
         }
 
+
         //adds values of the heap from largest to smallest by extracting max each time
-        while(heap.size() > 0){
+
+        while(heap.size() > 0){ // *ISSUE IS HERE*
             result.add(extractMax(heap));
         }
 
         //reverses the array so it's smallest to largest
         Collections.reverse(result);
+        //return result;
         return result;
+
 
     }
 
@@ -87,7 +87,7 @@ class HW3 {
         array.add(2);
         array.add(6);
 
-        heapSort(array);
+        System.out.println(heapSort(array)); // *ISSUE IS HERE*
 
     }
 }
