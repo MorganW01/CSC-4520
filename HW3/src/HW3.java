@@ -2,33 +2,33 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 class HW3 {
-    public static void heapify(ArrayList<Integer> hT, int i) {
-        int size = hT.size();
+    public static void heapify(ArrayList<Integer> heap, int i) {
+        int size = heap.size();
         int largest = i;
-        int l = 2 * i + 1;
-        int r = 2 * i + 2;
-        if (l < size && hT.get(l) > hT.get(largest))
-            largest = l;
-        if (r < size && hT.get(r) > hT.get(largest))
-            largest = r;
+        int left = (2 * i) + 1;
+        int right = (2 * i) + 2;
+        if (left < size && heap.get(left) > heap.get(largest))
+            largest = left;
+        if (right < size && heap.get(right) > heap.get(largest))
+            largest = right;
 
         if (largest != i) {
-            int temp = hT.get(largest);
-            hT.set(largest, hT.get(i));
-            hT.set(i, temp);
+            int temp = heap.get(largest);
+            heap.set(largest, heap.get(i));
+            heap.set(i, temp);
 
-            heapify(hT, largest);
+            heapify(heap, largest);
         }
     }
 
-    public static void heapAdd(ArrayList<Integer> hT, int newNum) {
-        int size = hT.size();
+    public static void heapAdd(ArrayList<Integer> heap, int value) {
+        int size = heap.size();
         if (size == 0) {
-            hT.add(newNum);
+            heap.add(value);
         } else {
-            hT.add(newNum);
+            heap.add(value);
             for (int i = size / 2 - 1; i >= 0; i--) {
-                heapify(hT, i);
+                heapify(heap, i);
             }
         }
     }
