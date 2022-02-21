@@ -53,6 +53,7 @@ class HW3 {
     }
 
 
+    //heap sort method follows algorithm on homework sheet
     public static ArrayList<Integer> heapSort (ArrayList<Integer> array) {
         //n is the size of the array
         int  n = array.size();
@@ -66,14 +67,15 @@ class HW3 {
 
         }
 
-
         //adds values of the heap from largest to smallest by extracting max each time
         while(heap.size() > 0){
             result.add(extractMax(heap));
         }
 
         //reverses the array so it's smallest to largest (max heap is largest to smallest by default)
+        //removing this line can easily make result largest to smallest.
         Collections.reverse(result);
+        //returns result
         return result;
 
 
