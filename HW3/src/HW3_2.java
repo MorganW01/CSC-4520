@@ -4,8 +4,11 @@ public class HW3_2 {
 
     public static void heapAdd(int[] arr, int value){
         int n = arr.length;
+
         n = n+1;
+
         value = arr[n - 1];
+
         heapify(arr, n, value);
 
     }
