@@ -1,6 +1,6 @@
 public class HW5 {
     //creates empty matrix
-    static int[][] graph;
+    private static int[][] graph;
 
     //creates an edge
     static void edge(int x, int y) {
@@ -44,15 +44,11 @@ public class HW5 {
         //created boolean array visit for search
         boolean[] visit = new boolean[vertices];
 
-        //DFS test cases; test one at a time
-        DFS(graph, 0, visit);
+        //DFS test cases; test one at a time, comment out the other
+
+        //DFS(graph, 0, visit);
 
         DFS(graph, 1, visit);
-
-
-
-
-
 
     }
 }
