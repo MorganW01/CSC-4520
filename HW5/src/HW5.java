@@ -44,7 +44,7 @@ public class HW5 {
         //created boolean array visit for search
         boolean[] visit = new boolean[vertices];
 
-        //DFS test cases
+        //DFS test cases; test one at a time
         DFS(graph, 0, visit);
 
         DFS(graph, 1, visit);
