@@ -1,38 +1,39 @@
-import java.util.;
-import java.io.;
-
 public class HW5 {
-    static int[][] adj;
+    //creates empty matrix
+    static int[][] graph;
 
-
+    //creates an edge
     static void edge(int x, int y) {
-
-        adj[x][y] = 1;
+        graph[x][y] = 1;
 
     }
 
-
-    static void dfs(int[][] m, int start, boolean visit[]) {
+    // method for Depth First Search
+    static void DFS (int[][] m, int start, boolean[] visit) {
 
         visit[start] = true;
         System.out.print(start + " ");
 
         for(int i = 0; i < m[start].length; i++) {
             if(m[start][i] == 1 && (!visit[i])) {
-                dfs(m, i, visit);
+                //uses recursive method
+                DFS(m, i, visit);
             }
         }
 
     }
-    public static void main(String args) {
 
-        int vert = 5; // number of vertices
+    //main driver method
+    public static void main(String[] args) {
+
+        int vertices = 5; // number of vertices
         int edges = 6;// number of edges
 
 
-        adj = new int[vert][edges];// adj matrix intializw
+        //initializes matrix with given number of edges and vertices
+        graph = new int[vertices][edges];
 
-        //creating the conncetions
+        //creating the edges with the connections given in the graph.
         edge(1, 0);
         edge(1, 2);
         edge(1, 4);
@@ -40,9 +41,17 @@ public class HW5 {
         edge(3, 0);
         edge(2, 0);
 
-        boolean[] vist = new boolean[vert]; // creating booelean array
+        //created boolean array visit for search
+        boolean[] visit = new boolean[vertices];
 
-        dfs(adj, 1, vist);//dfs starting at 1
+        //DFS test cases
+        DFS(graph, 0, visit);
+
+        DFS(graph, 1, visit);
+
+
+
+
 
 
     }
